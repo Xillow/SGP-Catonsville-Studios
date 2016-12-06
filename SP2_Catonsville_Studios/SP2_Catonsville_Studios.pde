@@ -70,6 +70,7 @@ void draw() {
  
   }
     if(screenState >= 3){
+     daysAndTime();
      phoneUI.drawPhoneUI(phoneUIState);
   }
 }

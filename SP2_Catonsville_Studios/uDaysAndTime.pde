@@ -2,10 +2,12 @@
 //800 = 0800 as in 8:00 AM. at 2400 AKA 12:00 AM the day resets.
 //values set for timeEllapse = the amount of time the player spends each hour they click
 //on each location.
+
 int mapLocationNumber = 0;
 int time = 800;
 int day = 1;
 int timeEllapse = 0;
+
 void daysAndTime(){
   
 if(mapLocationNumber == 1){
@@ -40,15 +42,11 @@ if(time >= 2400){
   time = 800 + (time-2400);
 }
 
-if(mapLocationNumber == 0){
-text(time, 15, 25);
-text("day" + day, 15, 45);
-}
+
 //Above if statement only shows time if the player is at the map.
-if(screenState >= 3){
-     phoneUI.drawPhoneUI(phoneUIState);
+if(phoneUIState >= 1){
      //textfont??
-     text(time, 636, 35);
-     text(day, 650, 35);        //the X and Y values for these may need to change, they may not display time and day-
+     text("time: " + time, 600, 35);
+     text("day" + day, 7000, 35);        //the X and Y values for these may need to change, they may not display time and day-
 }                               //-properly on phone UI.
 }
