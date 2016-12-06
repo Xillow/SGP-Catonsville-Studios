@@ -14,7 +14,6 @@
  */
 
 
-import controlP5.*;
 int [] happiness = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100} ; 
 int [] wealth = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; 
 int [] grades = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100}; 
@@ -72,7 +71,9 @@ void draw() {
   }
     if(screenState >= 3){
      phoneUI.drawPhoneUI(phoneUIState);
+   
   }
+  DaysnTime();
 }
 void startScreen() { 
   startScreen = loadImage("StartScreen.png");
