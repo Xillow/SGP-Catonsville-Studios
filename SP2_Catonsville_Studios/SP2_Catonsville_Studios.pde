@@ -70,8 +70,9 @@ void draw() {
  
   }
     if(screenState >= 3){
-     daysAndTime();
      phoneUI.drawPhoneUI(phoneUIState);
+     daysAndTime();
+     
   }
 }
 void startScreen() { 

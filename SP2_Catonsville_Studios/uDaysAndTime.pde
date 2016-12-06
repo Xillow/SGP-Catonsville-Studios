@@ -43,10 +43,11 @@ if(time >= 2400){
 }
 
 
-//Above if statement only shows time if the player is at the map.
+//Above if statement only shows time if the player is on their phone.
 if(phoneUIState >= 1){
      //textfont??
-     text("time: " + time, 600, 35);
-     text("day" + day, 7000, 35);        //the X and Y values for these may need to change, they may not display time and day-
+     textSize(16);
+     text("time: " + time, 600, 25);
+     text("day" + day, 700, 25);        //the X and Y values for these may need to change, they may not display time and day-
 }                               //-properly on phone UI.
 }
