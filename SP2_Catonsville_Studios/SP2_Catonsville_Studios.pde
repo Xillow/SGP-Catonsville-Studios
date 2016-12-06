@@ -14,9 +14,8 @@
  */
 
 
-import controlP5.*;
 int [] happiness = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100} ; 
-int [] wealth = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; 
+int [] wealth = {1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; 
 int [] grades = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100}; 
 int totalHappiness = ((happiness[0] + happiness[1] + happiness[2] + happiness[3] + happiness[4] + happiness[5] + happiness[6] + happiness[7] + happiness[8] + happiness[9] + happiness[10] + happiness[11] + happiness[12] + happiness[13] + happiness[14])/15);
 int totalWealth = (wealth[0] + wealth[1] + wealth[2] + wealth[3] + wealth[4] + wealth[5] + wealth[6] + wealth[7] + wealth[8] + wealth[9] + wealth[10] + wealth[11] + wealth[12] + wealth[13] + wealth[14]);
@@ -79,7 +78,11 @@ void startScreen() {
   background(startScreen);
   buttonsStartScreen();
 }
-
+void keyPressed() {
+  if (key == 's') {
+          save("UI.png");
+  }
+  }
 
 void buttonsStartScreen() {
   buttonSS0.startScreen(0);  

@@ -18,27 +18,27 @@ class textBoxButton {
     textBoxHeight = d;
     text = t;
     screenChang = false;
-    week1 = new weekTotal(1);
-    week2 = new weekTotal(2);
-    week3 = new weekTotal(3);
-    week4 = new weekTotal(4);
-    week5 = new weekTotal(5);
-    week6 = new weekTotal(6);
-    week7 = new weekTotal(7);
-    week8 = new weekTotal(8);
-    week9 = new weekTotal(9);
-    week10 = new weekTotal(10);
-    week11 = new weekTotal(11);
-    week12 = new weekTotal(12);
-    week13 = new weekTotal(13);
-    week14 = new weekTotal(14);
-    week15 = new weekTotal(15);
+    week1 = new weekTotal(0);
+    week2 = new weekTotal(1);
+    week3 = new weekTotal(2);
+    week4 = new weekTotal(3);
+    week5 = new weekTotal(4);
+    week6 = new weekTotal(5);
+    week7 = new weekTotal(6);
+    week8 = new weekTotal(7);
+    week9 = new weekTotal(8);
+    week10 = new weekTotal(9);
+    week11 = new weekTotal(10);
+    week12 = new weekTotal(11);
+    week13 = new weekTotal(12);
+    week14 = new weekTotal(13);
+    week15 = new weekTotal(14);
   }
-/*
+  /*
  drawtTextBox - draws
- input: mousePressed
- output:mainGameSwitchNum
- */
+   input: mousePressed
+   output:mainGameSwitchNum
+   */
   void drawTextBox(int switchNum) {
 
     textRepo();
@@ -117,7 +117,7 @@ class textBoxButton {
       break;
     }
     if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
-          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) { 
+      mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) { 
       fill(255, 255, 15);
       rect(xPos, yPos, textBoxWidth, textBoxHeight);
       fill(0);
@@ -134,14 +134,16 @@ class textBoxButton {
     if ((mousePressed == true) && ((textBoxWidth + textBoxHeight)/2 == dist)) {
     }
   }
-/*
+  /*
  drawPhoneUI - displays the players grades, wealth and happiness    
- input: Mouse Buttons
- output: phoneUIState, Grades, Wealth, Happiness, totalGrades,totalWealth, totalHappiness 
- */
+   input: Mouse Buttons
+   output: phoneUIState, Grades, Wealth, Happiness, totalGrades,totalWealth, totalHappiness 
+   */
   void drawPhoneUI(int switchNum) {
     switch(switchNum) {
     case 0:
+      fill(255);
+      rectMode(CORNER);
       rect(xPos, yPos, textBoxWidth, textBoxHeight);  
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -159,11 +161,15 @@ class textBoxButton {
       rectMode(CENTER);
       rect(640, 480, 1280, 960);
       fill(71, 175, 198);
-      rect(640, 480, 640, 960);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
       stroke(130, 221, 242);
       line(322, 50, 957, 50);
+      strokeWeight(2);
       stroke(0);
-      fill(0);
+      fill(255);
       textAlign(LEFT, BOTTOM);
       textSize(16);
       text("AT&T", 322, 45);
@@ -173,21 +179,23 @@ class textBoxButton {
       fill(255);
       rect(405, 25, 5, 30);
       fill(255);
-      rect(900, 30, 45, 15);
+      rect(895, 30, 45, 15);
       fill(0);
-      rect(925, 30, 15, 15);
+      rect(920, 30, 15, 15);
       textSize(12);
-      text("80%", 936, 37);
+      text("80 %", 930, 37);
       textAlign(CENTER, TOP);
-      text(" week 1 ", 640, 90);
+      textSize(32);
+      text(" Week 1 ", 640, 90);
       textAlign(LEFT, BOTTOM);
       week1.happinessTracker();
       week1.accountBalance();
       week1.gradeTracker();
 
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -198,8 +206,9 @@ class textBoxButton {
       }
       fill(0);
       textSize(40);
-      text(">", 660, 90);
-      rect(660, 70, 40, 20);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
       if (mousePressed == true) {
         if (mouseX >= 660 && mouseX <= 700 &&
           mouseY >= 70 && mouseY <= 90) {
@@ -304,11 +313,11 @@ class textBoxButton {
       text("80%", 936, 37);
       textAlign(CENTER, TOP);
       text("Semester Total", 640, 90);
-        textAlign(LEFT, BOTTOM);
+      textAlign(LEFT, BOTTOM);
       gradeTrackerTotal();
       accountBalanceTotal();
       happinessTrackerTotal();
-    
+
 
       fill(0, 0);
       rect(xPos, yPos, textBoxWidth, textBoxHeight);
