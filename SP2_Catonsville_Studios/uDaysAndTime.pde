@@ -19,7 +19,7 @@ if(mapLocationNumber == 2 || mapLocationNumber == 3 || mapLocationNumber == 4){
 }
 
 if(mapLocationNumber == 5){
-  timeEllapse = 150;
+  timeEllapse = 200;
 }
 
 //  ^^^the 3 if statements above set the amount of time the player spends in each area, we can change these later
