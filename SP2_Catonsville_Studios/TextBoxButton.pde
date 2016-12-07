@@ -148,7 +148,7 @@ class textBoxButton {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
           phoneUIState++;
-          delay(2000);
+          delay(500);
         }
       }
       break;
