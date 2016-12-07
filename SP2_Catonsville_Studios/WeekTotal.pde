@@ -11,8 +11,8 @@ weekTotal(int i) {
 //starts the function grade tracker and puts a condtional loop that if the grades and weeknumber are greater than or equal to 90 are going to be an a, and prints the line A 
 void gradeTracker(){
 if(grades[weekNumber] >= 90){
-textSize(20);
-text("Grade: A", 322, 400);
+textSize(30);
+text("Grade: A", 380, 200);
 }
 //starts the function grade tracker and puts a condtional loop that if the grades and weeknumber are greater than or equal to 80 or less than 90 are going to be an b, and prints the line b
 if(grades[weekNumber] < 90 && grades[weekNumber] >= 80){
@@ -39,15 +39,15 @@ delay(500);
 }
 //Starts the function account balance and has a .5 second delay 
 void accountBalance(){
-  textSize(20);
-  text("Account Balance = " + wealth[weekNumber], 322, 450);
+  textSize(30);
+  text("Bank Account Balance = " +"$" + wealth[weekNumber], 380, 250);
   delay(500);
 }
 //Starts the function happiness tracker which is used to track your happiness through out the week
 void happinessTracker(){
 if(happiness[weekNumber] >= 90){
-textSize(20);
-text("You are having the time of your life!", 322, 500);
+textSize(30);
+text("I am having the time of my life!", 380, 300);
 }
 //if your happiness is less than 90 and greater than or equal to 80 it prints line you are very happy
 if(happiness[weekNumber] < 90 && happiness[weekNumber] >= 80){

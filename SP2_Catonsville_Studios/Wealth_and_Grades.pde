@@ -2,7 +2,7 @@
 void gradeTrackerTotal(){
 if(totalGrades >= 90){
 textSize(20);
-text("Grade: A", 322, 400);
+text("Grade: A", 400, 400);
 }
 //starts the function grade tracker and puts a condtional loop that if the grades and weeknumber are greater than or equal to 80 or less than 90 are going to be an b, and prints the line b
 if(totalGrades < 90 && totalGrades >= 80){
@@ -30,14 +30,14 @@ delay(500);
 //Starts the function account balance and has a .5 second delay 
 void accountBalanceTotal(){
   textSize(20);
-  text("Account Balance = " + totalWealth, 322, 450);
+  text("Account Balance = " + totalWealth, 400, 450);
   delay(500);
 }
 //Starts the function happiness tracker which is used to track your happiness through out the week
 void happinessTrackerTotal(){
 if(totalHappiness >= 90){
 textSize(20);
-text("You are having the time of your life!", 322, 500);
+text("You are having the time of your life!", 400, 500);
 }
 //if your happiness is less than 90 and greater than or equal to 80 it prints line you are very happy
 if(totalHappiness < 90 && totalHappiness >= 80){
