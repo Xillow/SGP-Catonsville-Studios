@@ -42,7 +42,10 @@ if(time >= 2400){
   time = 800 + (time-2400);
 }
 
-
+if(day > 7){
+week++;
+day = 1
+}
 //Above if statement only shows time if the player is on their phone.
 if(phoneUIState >= 1){
      //textfont??
