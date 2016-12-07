@@ -52,7 +52,6 @@ class textBoxButton {
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {  
           if (mainGameSwitchNum != 5)
             mainGameSwitchNum++;
-          delay(2000);
         }
       }
     } 
