@@ -53,8 +53,10 @@ class textBoxButton {
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {  
           if (mainGameSwitchNum != 5)
             mainGameSwitchNum++;
+
           
           delay(100);
+
         }
       }
     } 
@@ -157,8 +159,10 @@ class textBoxButton {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
           phoneUIState++;
+
           
           delay(100);
+
         }
       }
       break;
