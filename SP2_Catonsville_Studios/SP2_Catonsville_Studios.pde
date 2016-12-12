@@ -35,6 +35,12 @@ startButtons buttonSS3 = new startButtons(750, 550, 300, 70, 3);
 textBoxButton buttonMG0 = new textBoxButton(200, 700, 800, 200, mainGameSwitchNum); 
 textBoxButton phoneUI = new textBoxButton(1190, 50, 50, 75, 0);
 
+int mapLocationNumber = 0; //map location
+int time = 8;           //days start at 8:00
+int day = 1;           //starts at day 1
+int week = 1;          //Must I go on?
+int timeEllapse = 0;   //used for day progression
+
 int phoneUIState = 0;
 void setup() { 
   size(1280, 960); 
