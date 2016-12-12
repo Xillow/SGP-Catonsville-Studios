@@ -33,9 +33,6 @@ startButtons buttonSS1 = new startButtons(750, 350, 300, 70, 1);
 startButtons buttonSS2 = new startButtons(750, 450, 300, 70, 2); 
 startButtons buttonSS3 = new startButtons(750, 550, 300, 70, 3);
 textBoxButton buttonMG0 = new textBoxButton(200, 700, 800, 200, mainGameSwitchNum); 
-textBoxButton buttonMG1 = new textBoxButton(450, 358, 60, 60, 1);
-textBoxButton buttonMG2 = new textBoxButton(735, 314, 60, 60, 2);
-textBoxButton buttonMG3 = new textBoxButton(502, 620, 60, 60, 3);
 textBoxButton phoneUI = new textBoxButton(1190, 50, 50, 75, 0);
 
 int phoneUIState = 0;
@@ -46,8 +43,9 @@ void setup() {
 
 void draw() { 
   fill(255);
-  println(mouseX, mouseY);
-   println(phoneUIState);
+  println(buttonMG0);
+  //println(mouseX, mouseY);
+  //println(phoneUIState);
   if (screenState == 0 || screenState == 1) {
     startScreen(); 
     //mainGame);
@@ -65,9 +63,6 @@ void draw() {
           img4 = loadImage("Map.png");
 
       background(img4);
-    buttonMG1.drawEllipseButton();
-    buttonMG2.drawEllipseButton();
-    buttonMG3.drawEllipseButton();
  
   }
     if(screenState >= 3){

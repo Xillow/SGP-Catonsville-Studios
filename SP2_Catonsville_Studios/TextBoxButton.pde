@@ -33,6 +33,7 @@ class textBoxButton {
     week13 = new weekTotal(12);
     week14 = new weekTotal(13);
     week15 = new weekTotal(14);
+ 
   }
   /*
  drawtTextBox - draws
@@ -40,8 +41,8 @@ class textBoxButton {
    output:mainGameSwitchNum
    */
   void drawTextBox(int switchNum) {
-
-    textRepo();
+  // println(mainGameSwitchNum);
+    textRepo(switchNum);
     textSize(32);
     strokeWeight(5);
     textAlign(CENTER, CENTER);
@@ -53,7 +54,7 @@ class textBoxButton {
           if (mainGameSwitchNum != 5)
             mainGameSwitchNum++;
           
-          delay(750);
+          delay(100);
         }
       }
     } 
@@ -137,7 +138,7 @@ class textBoxButton {
 
     ellipse(xPos, yPos, textBoxWidth, textBoxHeight);
 
-    textRepo();
+    textRepo(0);
     if ((mousePressed == true) && ((textBoxWidth + textBoxHeight)/2 == dist)) {
     }
   }
@@ -157,7 +158,7 @@ class textBoxButton {
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
           phoneUIState++;
           
-          delay(500);
+          delay(100);
         }
       }
       break;
@@ -209,7 +210,7 @@ class textBoxButton {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
           phoneUIState = 0;
-          delay(500);
+          delay(100);
         }
       }
       fill(0);
@@ -263,8 +264,10 @@ class textBoxButton {
       week2.accountBalance();
       week2.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -331,8 +334,9 @@ class textBoxButton {
       week3.accountBalance();
       week3.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -399,8 +403,10 @@ class textBoxButton {
       week4.accountBalance();
       week4.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -467,8 +473,10 @@ class textBoxButton {
       week5.accountBalance();
       week5.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -536,8 +544,10 @@ class textBoxButton {
       week6.accountBalance();
       week6.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -604,8 +614,10 @@ class textBoxButton {
       week7.accountBalance();
       week7.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+    textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -672,8 +684,10 @@ class textBoxButton {
       week8.accountBalance();
       week8.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -740,8 +754,10 @@ class textBoxButton {
       week9.accountBalance();
       week9.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -809,8 +825,10 @@ class textBoxButton {
       week10.accountBalance();
       week10.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -878,8 +896,10 @@ class textBoxButton {
       week11.accountBalance();
       week11.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -947,8 +967,10 @@ case 12:
       week12.accountBalance();
       week12.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -1016,8 +1038,10 @@ case 13:
       week13.accountBalance();
       week13.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -1154,8 +1178,10 @@ case 15:
       week15.accountBalance();
       week15.gradeTracker();
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -1228,8 +1254,10 @@ case 15:
       happinessTrackerTotal();
 
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -1258,7 +1286,7 @@ case 15:
 
 
 
-  void textRepo() {
+  void textRepo(int text) {
     switch(text) {
       case 0:
       optionName = "its the first day of school and you are excited to start your day at your new university!";
