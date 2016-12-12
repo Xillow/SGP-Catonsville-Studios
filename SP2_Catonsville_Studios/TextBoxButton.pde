@@ -11,7 +11,7 @@ class textBoxButton {
 
 
 
-  textBoxButton(float a, float b, float c, float d, int t) {  // this was made by Lester "high noon" Mccree
+  textBoxButton(float a, float b, float c, float d, int t) {  
     xPos = a;
     yPos = b;
     textBoxWidth = c;
@@ -33,6 +33,7 @@ class textBoxButton {
     week13 = new weekTotal(12);
     week14 = new weekTotal(13);
     week15 = new weekTotal(14);
+ 
   }
   /*
  drawtTextBox - draws
@@ -40,8 +41,8 @@ class textBoxButton {
    output:mainGameSwitchNum
    */
   void drawTextBox(int switchNum) {
-
-    textRepo();
+  // println(mainGameSwitchNum);
+    textRepo(switchNum);
     textSize(32);
     strokeWeight(5);
     textAlign(CENTER, CENTER);
@@ -52,12 +53,22 @@ class textBoxButton {
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {  
           if (mainGameSwitchNum != 5)
             mainGameSwitchNum++;
+
+          
+          delay(100);
+
         }
       }
     } 
     switch (switchNum) {
     case 0:
-      mainGameSwitchNum++;
+      
+      img0 = loadImage("dorm.jpg");
+      background(img0);
+      fill(255);
+      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      fill(0);
+      text(optionName, xPos, yPos, textBoxWidth, textBoxHeight);
       break;
 
     case 1:
@@ -129,7 +140,7 @@ class textBoxButton {
 
     ellipse(xPos, yPos, textBoxWidth, textBoxHeight);
 
-    textRepo();
+    textRepo(0);
     if ((mousePressed == true) && ((textBoxWidth + textBoxHeight)/2 == dist)) {
     }
   }
@@ -148,7 +159,10 @@ class textBoxButton {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
           phoneUIState++;
-          delay(500);
+
+          
+          delay(100);
+
         }
       }
       break;
@@ -200,7 +214,7 @@ class textBoxButton {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
           mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
           phoneUIState = 0;
-          delay(2000);
+          delay(100);
         }
       }
       fill(0);
@@ -209,24 +223,29 @@ class textBoxButton {
       text(">", 740, 83);
       //  rect(660, 70, 40, 20);
       if (mousePressed == true) {
-        if (mouseX >= 660 && mouseX <= 700 &&
-          mouseY >= 70 && mouseY <= 90) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
           phoneUIState++;
-          delay(2000);
+          
         }
       }
       break;
+      
     case 2:
       noStroke();
       fill(130, 221, 242);
       rectMode(CENTER);
       rect(640, 480, 1280, 960);
       fill(71, 175, 198);
-      rect(640, 480, 640, 960);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
       stroke(130, 221, 242);
       line(322, 50, 957, 50);
+      strokeWeight(2);
       stroke(0);
-      fill(0);
+      fill(255);
       textAlign(LEFT, BOTTOM);
       textSize(16);
       text("AT&T", 322, 45);
@@ -236,17 +255,863 @@ class textBoxButton {
       fill(255);
       rect(405, 25, 5, 30);
       fill(255);
-      rect(900, 30, 45, 15);
+      rect(895, 30, 45, 15);
       fill(0);
-      rect(925, 30, 15, 15);
+      rect(920, 30, 15, 15);
       textSize(12);
-      text("80%", 936, 37);
+      text("80 %", 930, 37);
       textAlign(CENTER, TOP);
-      text(" week 2 ", 640, 90);
+      textSize(32);
+      text(" Week 2 ", 640, 90);
       textAlign(LEFT, BOTTOM);
-      week1.happinessTracker();
-      week1.accountBalance();
-      week1.gradeTracker();
+      week2.happinessTracker();
+      week2.accountBalance();
+      week2.gradeTracker();
+
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+    case 3:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 3 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week3.happinessTracker();
+      week3.accountBalance();
+      week3.gradeTracker();
+
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+    case 4:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 4 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week4.happinessTracker();
+      week4.accountBalance();
+      week4.gradeTracker();
+
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+    case 5:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 5 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week5.happinessTracker();
+      week5.accountBalance();
+      week5.gradeTracker();
+
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+      
+          case 6:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 6 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week6.happinessTracker();
+      week6.accountBalance();
+      week6.gradeTracker();
+
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+    case 7:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 7", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week7.happinessTracker();
+      week7.accountBalance();
+      week7.gradeTracker();
+
+    textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+    case 8:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 8 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week8.happinessTracker();
+      week8.accountBalance();
+      week8.gradeTracker();
+
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+    case 9:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 9 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week9.happinessTracker();
+      week9.accountBalance();
+      week9.gradeTracker();
+
+     textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+
+    case 10:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 10 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week10.happinessTracker();
+      week10.accountBalance();
+      week10.gradeTracker();
+
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+
+  case 11:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 11 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week11.happinessTracker();
+      week11.accountBalance();
+      week11.gradeTracker();
+
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+
+case 12:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 12 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week12.happinessTracker();
+      week12.accountBalance();
+      week12.gradeTracker();
+
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+
+case 13:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 13 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week13.happinessTracker();
+      week13.accountBalance();
+      week13.gradeTracker();
+
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+
+case 14:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text(" Week 14 ", 640, 90);
+      textAlign(LEFT, BOTTOM);
+      week14.happinessTracker();
+      week14.accountBalance();
+      week14.gradeTracker();
 
       fill(0, 0);
       rect(xPos, yPos, textBoxWidth, textBoxHeight);
@@ -260,42 +1125,41 @@ class textBoxButton {
       }
       fill(0);
       textSize(40);
-      text(">", 660, 90);
-      rect(660, 70, 40, 20);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
       if (mousePressed == true) {
-        if (mouseX >= 660 && mouseX <= 700 &&
-          mouseY >= 70 && mouseY <= 90) {
-          phoneUIState = 16;
-          // phoneUIState++;
-          delay(2000);
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
         }
       }
-      rect(580, 70, 40, 20);
-      text("<", 580, 90);
+     
+      text("<", 530, 83);
       if (mousePressed == true) {
-        if (mouseX >= 580 && mouseX <= 620 &&
-          mouseY >= 70 && mouseY <= 90) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
           phoneUIState--;
           delay(2000);
         }
       }
       break;
 
-
-
-
-
-    case 16:
+case 15:
       noStroke();
       fill(130, 221, 242);
       rectMode(CENTER);
       rect(640, 480, 1280, 960);
       fill(71, 175, 198);
-      rect(640, 480, 640, 960);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
       stroke(130, 221, 242);
       line(322, 50, 957, 50);
+      strokeWeight(2);
       stroke(0);
-      fill(0);
+      fill(255);
       textAlign(LEFT, BOTTOM);
       textSize(16);
       text("AT&T", 322, 45);
@@ -305,21 +1169,99 @@ class textBoxButton {
       fill(255);
       rect(405, 25, 5, 30);
       fill(255);
-      rect(900, 30, 45, 15);
+      rect(895, 30, 45, 15);
       fill(0);
-      rect(925, 30, 15, 15);
+      rect(920, 30, 15, 15);
       textSize(12);
-      text("80%", 936, 37);
+      text("80 %", 930, 37);
       textAlign(CENTER, TOP);
-      text("Semester Total", 640, 90);
+      textSize(32);
+      text(" Week 15 ", 640, 90);
       textAlign(LEFT, BOTTOM);
+      week15.happinessTracker();
+      week15.accountBalance();
+      week15.gradeTracker();
+
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
+
+      if (mousePressed == true) {
+        if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
+          mouseY >= yPos && mouseY <= (yPos + textBoxHeight)) {
+          phoneUIState = 0;
+          delay(2000);
+        }
+      }
+      fill(0);
+      textSize(40);
+      textAlign(CENTER, TOP);
+      text(">", 740, 83);
+      //  rect(660, 70, 40, 20);
+      if (mousePressed == true) {
+        if (mouseX >= 729 && mouseX <= 751 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState++;
+        }
+      }
+     fill(0);
+      textSize(40);
+      text("<", 530, 83);
+      if (mousePressed == true) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
+          phoneUIState--;
+          delay(2000);
+        }
+      }
+      break;
+
+
+    case 16:
+      noStroke();
+      fill(130, 221, 242);
+      rectMode(CENTER);
+      rect(640, 480, 1280, 960);
+      fill(71, 175, 198);
+      stroke(0);
+      strokeWeight(8);
+      rect(640, 480, 650, 960);
+      strokeWeight(1);
+      stroke(130, 221, 242);
+      line(322, 50, 957, 50);
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      textAlign(LEFT, BOTTOM);
+      textSize(16);
+      text("AT&T", 322, 45);
+      rect(375, 33, 5, 15);
+      rect(385, 30, 5, 20);
+      rect(395, 28, 5, 25);
+      fill(255);
+      rect(405, 25, 5, 30);
+      fill(255);
+      rect(895, 30, 45, 15);
+      fill(0);
+      rect(920, 30, 15, 15);
+      textSize(12);
+      text("80 %", 930, 37);
+      textAlign(CENTER, TOP);
+      textSize(32);
+      text("Semester", 640,80);
+      text("Total", 640, 100);
+      textAlign(LEFT, BOTTOM);
+
       gradeTrackerTotal();
       accountBalanceTotal();
       happinessTrackerTotal();
 
 
-      fill(0, 0);
-      rect(xPos, yPos, textBoxWidth, textBoxHeight);
+      textSize(64);
+      textAlign(LEFT, TOP);
+      text("X", xPos, yPos, textBoxWidth, textBoxHeight);
+
 
       if (mousePressed == true) {
         if (mouseX >= xPos && mouseX <=(xPos + textBoxWidth) &&
@@ -328,13 +1270,14 @@ class textBoxButton {
           delay(2000);
         }
       }
+      
       fill(0);
       textSize(40);
-      rect(580, 70, 40, 20);
-      text("<", 580, 90);
+      textAlign(CENTER, TOP);
+      text("<", 530, 83);
       if (mousePressed == true) {
-        if (mouseX >= 580 && mouseX <= 620 &&
-          mouseY >= 70 && mouseY <= 90) {
+        if (mouseX >= 518 && mouseX <= 540 &&
+          mouseY >= 97 && mouseY <= 120) {
           phoneUIState--;
           delay(2000);
         }
@@ -347,9 +1290,18 @@ class textBoxButton {
 
 
 
-  void textRepo() {
+  void textRepo(int text) {
     switch(text) {
-    case 0:
+      case 0:
+      optionName = "its the first day of school and you are excited to start your day at your new university!";
+      break;
+      case 1:
+      optionName = "This is one of the places that you can eat on campus";
+      break;
+      case 2:
+      optionName = "Now its time for your brand new job! (and you remembered your glasses)";
+      break;
+      case 3:
       optionName = "its the first day of school and you are excited to start your day at your new university!";
       break;
     }

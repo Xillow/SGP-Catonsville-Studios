@@ -4,7 +4,7 @@
 //on each location.
 
 int mapLocationNumber = 0;
-int time = 800;
+int time = 8;
 int day = 1;
 int week = 1;
 int timeEllapse = 0;
@@ -44,14 +44,14 @@ if(time >= 2400){
 }
 
 if(day > 7){
-week++;
-day = 1
+//week++;
+day = 1;
 }
 //Above if statement only shows time if the player is on their phone.
 if(phoneUIState >= 1){
      //textfont??
      textSize(16);
-     text("time: " + time, 600, 25);
+     text("time: " + time + ":00", 600, 25);
      text("day" + day, 700, 25);        //the X and Y values for these may need to change, they may not display time and day-
 }                               //-properly on phone UI.
 }
