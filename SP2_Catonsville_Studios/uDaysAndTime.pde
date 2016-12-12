@@ -3,11 +3,7 @@
 //values set for timeEllapse = the amount of time the player spends each hour they click
 //on each location.
 
-int mapLocationNumber = 0;
-int time = 8;
-int day = 1;
-int week = 1;
-int timeEllapse = 0;
+
 
 void daysAndTime(){
   
